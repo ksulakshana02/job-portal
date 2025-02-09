@@ -62,31 +62,31 @@ const Applications = () => {
 
                                 {/* Applicant's Name */}
                                 <p className="sub-sec flex items-center gap-2 text-gray-700">
-                                    <span className="font-bold">Applicant's Name:</span>{" "}
+                                    <span className="font-bold">Applicant&#39;s Name:</span>{" "}
                                     {element.jobSeekerInfo.name}
                                 </p>
 
                                 {/* Applicant's Email */}
                                 <p className="sub-sec flex items-center gap-2 text-gray-700">
-                                    <span className="font-bold">Applicant's Email:</span>{" "}
+                                    <span className="font-bold">Applicant&#39;s Email:</span>{" "}
                                     {element.jobSeekerInfo.email}
                                 </p>
 
                                 {/* Applicant's Phone */}
                                 <p className="sub-sec flex items-center gap-2 text-gray-700">
-                                    <span className="font-bold">Applicant's Phone:</span>{" "}
+                                    <span className="font-bold">Applicant&#39;s Phone:</span>{" "}
                                     {element.jobSeekerInfo.phone}
                                 </p>
 
                                 {/* Applicant's Address */}
                                 <p className="sub-sec flex items-center gap-2 text-gray-700">
-                                    <span className="font-bold">Applicant's Address:</span>{" "}
+                                    <span className="font-bold">Applicant&#39;s Address:</span>{" "}
                                     {element.jobSeekerInfo.address}
                                 </p>
 
                                 {/* Applicant's Cover Letter */}
                                 <p className="sub-sec flex flex-col gap-2 text-gray-700">
-                                    <span className="font-bold">Applicant's Cover Letter:</span>
+                                    <span className="font-bold">Applicant&#39;s Cover Letter:</span>
                                     <textarea
                                         value={element.jobSeekerInfo.coverLetter}
                                         rows={5}
