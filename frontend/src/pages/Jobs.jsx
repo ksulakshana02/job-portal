@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
-// import {useDispatch, useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {toast} from "react-toastify";
-// import {clearAllJobErrors, fetchJobs} from "../store/slices/jobSlice";
+import {clearAllJobErrors, fetchJobs} from "../store/slices/jobSlice";
 import Spinner from "../components/Spinner";
 import {FaSearch} from "react-icons/fa";
 import {Link} from "react-router-dom";
@@ -12,7 +12,7 @@ const Jobs = () => {
     const [niche, setNiche] = useState("");
     const [selectedNiche, setSelectedNiche] = useState("");
     const [searchKeyword, setSearchKeyword] = useState("");
-    // const {jobs, loading, error} = useSelector((state) => state.jobs);
+    const {jobs, loading, error} = useSelector((state) => state.jobs);
 
     const handleCityChange = (city) => {
         setCity(city);
@@ -24,21 +24,20 @@ const Jobs = () => {
         setSelectedNiche(niche);
     };
 
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
-    // useEffect(() => {
-    //     if (error) {
-    //         toast.error(error);
-    //         dispatch(clearAllJobErrors());
-    //     }
-    //     dispatch(fetchJobs(city, niche, searchKeyword));
-    // }, [dispatch, error, city, niche]);
-    //
-    // const handleSearch = () => {
-    //     dispatch(fetchJobs(city, niche, searchKeyword));
-    // };
+    useEffect(() => {
+        if (error) {
+            toast.error(error);
+            dispatch(clearAllJobErrors());
+        }
+        dispatch(fetchJobs(city, niche, searchKeyword));
+    }, [dispatch, error, city, niche]);
 
-    const loading = true;
+    const handleSearch = () => {
+        dispatch(fetchJobs(city, niche, searchKeyword));
+    };
+
 
     const cities = [
         "All",
@@ -104,7 +103,7 @@ const Jobs = () => {
                             className="w-full sm:w-[750px] px-3 py-3 rounded-md border border-gray-300 focus:outline-none focus:border-yellow-400"
                         />
                         <button
-                            // onClick={handleSearch}
+                            onClick={handleSearch}
                             className="absolute right-3 top-1/2 -translate-y-1/2 bg-yellow-400 text-black font-medium px-4 py-2 rounded-md hover:bg-black hover:text-white transition-transform duration-300"
                         >
                             Find Job
