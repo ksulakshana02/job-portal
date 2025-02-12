@@ -4,9 +4,8 @@ import {Link} from "react-router-dom";
 import {GiHamburgerMenu} from "react-icons/gi";
 
 const Navbar = () => {
-    // const [show, setShow] = useState(false);
-    // const { isAuthenticated } = useSelector((state) => state.user);
-    const show = true;
+    const [show, setShow] = useState(false);
+    const { isAuthenticated } = useSelector((state) => state.user);
 
     return (
         <nav
@@ -24,7 +23,7 @@ const Navbar = () => {
                     <li>
                         <Link
                             to="/"
-                            // onClick={() => setShow(!show)}
+                            onClick={() => setShow(!show)}
                             className="text-gray-600 hover:text-yellow-400 transition-colors duration-300"
                         >
                             HOME
@@ -33,48 +32,48 @@ const Navbar = () => {
                     <li>
                         <Link
                             to="/jobs"
-                            // onClick={() => setShow(!show)}
+                            onClick={() => setShow(!show)}
                             className="text-gray-600 hover:text-yellow-400 transition-colors duration-300"
                         >
                             JOBS
                         </Link>
                     </li>
-                    {/*{isAuthenticated ? (*/}
-                    {/*    <li>*/}
-                    {/*        <Link*/}
-                    {/*            to="/dashboard"*/}
-                    {/*            onClick={() => setShow(!show)}*/}
-                    {/*            className="text-gray-600 hover:text-yellow-400 transition-colors duration-300"*/}
-                    {/*        >*/}
-                    {/*            DASHBOARD*/}
-                    {/*        </Link>*/}
-                    {/*    </li>*/}
-                    {/*) : (*/}
-                    {/*    <li>*/}
-                    {/*        <Link*/}
-                    {/*            to="/login"*/}
-                    {/*            onClick={() => setShow(!show)}*/}
-                    {/*            className="text-gray-600 hover:text-yellow-400 transition-colors duration-300"*/}
-                    {/*        >*/}
-                    {/*            LOGIN*/}
-                    {/*        </Link>*/}
-                    {/*    </li>*/}
-                    {/*)}*/}
-                    <li>
-                        <Link
-                            to="/login"
-                            // onClick={() => setShow(!show)}
-                            className="text-gray-600 hover:text-yellow-400 transition-colors duration-300"
-                        >
-                            LOGIN
-                        </Link>
-                    </li>
+                    {isAuthenticated ? (
+                        <li>
+                            <Link
+                                to="/dashboard"
+                                onClick={() => setShow(!show)}
+                                className="text-gray-600 hover:text-yellow-400 transition-colors duration-300"
+                            >
+                                DASHBOARD
+                            </Link>
+                        </li>
+                    ) : (
+                        <li>
+                            <Link
+                                to="/login"
+                                onClick={() => setShow(!show)}
+                                className="text-gray-600 hover:text-yellow-400 transition-colors duration-300"
+                            >
+                                LOGIN
+                            </Link>
+                        </li>
+                    )}
+                    {/*<li>*/}
+                    {/*    <Link*/}
+                    {/*        to="/login"*/}
+                    {/*        // onClick={() => setShow(!show)}*/}
+                    {/*        className="text-gray-600 hover:text-yellow-400 transition-colors duration-300"*/}
+                    {/*    >*/}
+                    {/*        LOGIN*/}
+                    {/*    </Link>*/}
+                    {/*</li>*/}
                 </ul>
             </div>
 
             <GiHamburgerMenu
                 className="text-2xl md:hidden cursor-pointer"
-                // onClick={() => setShow(!show)}
+                onClick={() => setShow(!show)}
             />
         </nav>
     );

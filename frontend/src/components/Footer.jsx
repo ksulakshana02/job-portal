@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa6";
 
 const Footer = () => {
-    // const { isAuthenticated } = useSelector((state) => state.user);
+    const { isAuthenticated } = useSelector((state) => state.user);
 
     return (
         <>
@@ -44,13 +44,13 @@ const Footer = () => {
                                 Jobs
                             </Link>
                         </li>
-                        {/*{isAuthenticated && (*/}
-                        {/*    <li>*/}
-                        {/*        <Link to="/dashboard" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300">*/}
-                        {/*            Dashboard*/}
-                        {/*        </Link>*/}
-                        {/*    </li>*/}
-                        {/*)}*/}
+                        {isAuthenticated && (
+                            <li>
+                                <Link to="/dashboard" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300">
+                                    Dashboard
+                                </Link>
+                            </li>
+                        )}
                     </ul>
                 </div>
 
@@ -77,7 +77,7 @@ const Footer = () => {
             </footer>
 
             <div className="flex justify-center text-center bg-gray-900 text-gray-500 p-5 font-light">
-                &copy; CopyRight 2024. All Rights Reserved By CodeWithZeeshu
+                &copy; CopyRight 2025. All Rights Reserved By kSulakshana
             </div>
         </>
     );
